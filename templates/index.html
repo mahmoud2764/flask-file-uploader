@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>Local File Uploader</h2>
+
+    <form method="post" enctype="multipart/form-data" action="/upload">
+      <input type="file" name="file">
+      <input type="submit" value="Upload">
+    </form>
+
+    <h3>Uploaded Files:</h3>
+    <ul>
+      {% for file in files %}
+        <li><a href="/uploads/{{ file }}">{{ file }}</a></li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
